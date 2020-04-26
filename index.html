@@ -2,7 +2,6 @@
 <head>
   <title>Doorbell</title>
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
     * {
       margin: 0;
       padding: 0;
@@ -10,26 +9,8 @@
 
     body {
       box-sizing: border-box;
-      background-color: rgb(0, 119, 60);
+      background-color: rgb(156, 142, 90);
       height: 100vh;
-    }
-
-    button {
-      font-family: "Open Sans", sans-serif;
-      border-radius: 100px;
-      box-shadow: 0px 5px 20px -10px #000;
-      width: 16rem;
-      height: 4rem;
-      font-size: 1.4em;
-      font-weight: 700;
-      color: rgb(0, 119, 60);
-      background-color: #fff;
-      border: none;
-      cursor: pointer;
-    }
- 
-    button:hover {
-      box-shadow: 2px 7px 25px -10px #000;
     }
 
     .center {
@@ -39,13 +20,42 @@
       transform: translate(-50%, -50%);
     }
 
+    .outer {
+      width: 30vw;
+      height: 40vh; 
+      border: none;
+      border-radius: 0.1em;
+      cursor: pointer;
+      background: linear-gradient(0deg, rgb(7, 0, 36) 0%, rgba(218, 232, 191, 0.82) 100%);
+    }
 
+    .inner {
+      width: 15vw;
+      height: 30vh;
+      background-color: #fff;
+      border-radius: 1em;
+      box-shadow: 0px 5px 20px -10px #000;
+    }
+
+    .inner:hover {
+      box-shadow: 2px 7px 25px -10px #000;
+    }
+
+    .text {
+      font-family: Verdana;
+      font-size: 3em;
+      font-weight: 700;
+    }
   </style>
 </head>
 <body>
   <div class="center">
     <button type="submit">
-      Ring Doorbell
+      <div class="outer">
+        <div class="inner center">
+          <div class="text center">Ring</div>
+        </div>
+      </div>
     </button>
   </div>
 </body>
