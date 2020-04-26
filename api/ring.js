@@ -14,9 +14,11 @@ module.exports = (req, res) => {
 
   https.get(url, ({ statusCode }) => {
     if ([200, 201, 202].includes(statusCode)) {
-      res.end('Success');
+      res.statusCode = 307;
+      res.setHeader('Location', '/success.html');
     } else {
-      res.end('Failed with status ' + statusCode);
+      res.statusCode = 307;
+      res.setHeader('Location', '/failure.html');
     }
   });
 }
