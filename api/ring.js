@@ -13,12 +13,12 @@ module.exports = (req, res) => {
   url.searchParams.append('accessCode', accessCode);
 
   https.get(url, ({ statusCode }) => {
-    if ([200, 201, 202].includes(statusCode)) {
-      res.statusCode = 307;
-      res.setHeader('Location', '/success.html');
-    } else {
-      res.statusCode = 307;
-      res.setHeader('Location', '/failure.html');
-    }
+    const location = [200, 201, 202].includes(statusCode)
+      ? '/success.html'
+      : '/failure.html';
+    res.statusCode = 303;
+    res.setHeader('Location', location);
+    res.setHeader('Content-Type', 'text/html');
+    res.end(`Redirecting to <a href="${location}">${location}</a>...`);
   });
 }
