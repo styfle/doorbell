@@ -4,6 +4,7 @@ module.exports = (req, res) => {
   if (req.method !== 'POST') {
     res.statusCode = 405;
     res.end(`Method not allowed: ${req.method}`);
+    return;
   }
 
   const notification = `${req.query.name || 'Someone'} rang the doorbell.`;
