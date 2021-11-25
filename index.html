@@ -49,7 +49,7 @@
   </style>
 </head>
 <body>
-  <form class="center" action="/api/ring" method="POST">
+  <form id="form" class="center" action="/api/ring" method="POST">
     <button type="submit">
       <div class="outer center">
         <div class="inner center">
@@ -58,5 +58,10 @@
       </div>
     </button>
   </form>
+  <script>
+    setTimeout(function() {
+      document.getElementById('form').submit();
+    }, 3000);
+  </script>
 </body>
 </html>
